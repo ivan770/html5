@@ -12,5 +12,9 @@ def page_not_found(e):
 def index():
     return render_template('index.html')
 
+@app.route('/license')
+def license():
+    return app.send_static_file('license.txt')
+
 if __name__ == '__main__':
     app.run()
