@@ -79,9 +79,6 @@
                     <span class="card-title">Current location</span>
                     <p id="location"></p>
                     </div>
-                    <div class="card-action">
-                        <a id="askButton">Ask for location</a>
-                      </div>
                 </div>
                 </div>
             </div>
@@ -146,11 +143,9 @@
         }
         
         if ('geolocation' in navigator) {
-          document.getElementById('askButton').addEventListener('click', function () {
             navigator.geolocation.getCurrentPosition(function (location) {
               document.getElementById("location").innerHTML = location.coords.latitude + ', ' + location.coords.longitude
             });
-          });
         } else {
           target.innerText = 'Geolocation API not supported.';
         }
